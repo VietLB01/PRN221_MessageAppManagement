@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Downloads\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\MessageApp.csproj": {}
+    "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\MessageApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Downloads\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\MessageApp.csproj": {
+    "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\MessageApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Downloads\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\MessageApp.csproj",
+        "projectUniqueName": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\MessageApp.csproj",
         "projectName": "MessageApp",
-        "projectPath": "C:\\Users\\Admin\\Downloads\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\MessageApp.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Downloads\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\obj\\",
+        "projectPath": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\MessageApp.csproj",
+        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+        "outputPath": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,26 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +78,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
