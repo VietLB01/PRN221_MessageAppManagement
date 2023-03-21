@@ -63,7 +63,7 @@ namespace MessageApp.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MessageApp;V1.0.0.0;component/view/authenview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MessageApp;component/view/authenview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\AuthenView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

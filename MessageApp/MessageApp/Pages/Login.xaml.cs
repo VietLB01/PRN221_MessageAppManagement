@@ -33,6 +33,10 @@ namespace MessageApp.Pages
             authenView.FrameMain.Content = new Register();   
         }
 
-      
+
+        private void btLogin_Click(object sender, RoutedEventArgs e)
+        {
+            //AuthenView.Instance.connection.On<String>
+        }
     }
 }

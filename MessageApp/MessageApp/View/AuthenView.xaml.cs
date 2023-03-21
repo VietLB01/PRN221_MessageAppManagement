@@ -40,6 +40,8 @@ namespace MessageApp.View
         public AuthenView()
         {
             InitializeComponent();
+          
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

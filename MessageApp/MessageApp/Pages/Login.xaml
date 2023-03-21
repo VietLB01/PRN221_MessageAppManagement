@@ -38,13 +38,14 @@
                      />
           
             <StackPanel Orientation="Horizontal">
-                <Button Content="Login" Background="#05b790"
+                <Button Name="btLogin" Content="Login" Background="#05b790"
                         Foreground="#ffffff" 
                         Style="{StaticResource CustomFont}"
                         FontSize="18"
                         Width="120"
                         Height="45"
                         materialDesign:ButtonAssist.CornerRadius="22"
+                        Click="btLogin_Click"
                         />
                 <Button  Name="register" Content="or Register"
                         Margin="5 0 0 0"

@@ -4,6 +4,81 @@
     "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\MessageApp.csproj": {}
   },
   "projects": {
+    "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj",
+        "projectName": "ContractLibrary",
+        "projectPath": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj",
+        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+        "outputPath": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.ServiceModel.Primitives": {
+              "target": "Package",
+              "version": "[4.10.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\MessageApp\\MessageApp.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +102,11 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj": {
+                "projectPath": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -57,6 +136,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "System.ServiceModel.Primitives": {
+              "target": "Package",
+              "version": "[4.10.1, )"
             }
           },
           "imports": [
