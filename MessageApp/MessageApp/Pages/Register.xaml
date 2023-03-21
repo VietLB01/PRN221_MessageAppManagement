@@ -66,13 +66,13 @@
                         Height="45"
                         materialDesign:ButtonAssist.CornerRadius="22"
                         />
-                <Button Content="or Login"
+                <Button Name="Login" Content="or Login"
                         Margin="5 0 0 0"
                         Style="{StaticResource MaterialDesignFlatButton}"
                         FontSize="18"
                         Width="120"
                         Height="45"
-                        
+                        Click="Login_Click"
                         />
 
             </StackPanel>

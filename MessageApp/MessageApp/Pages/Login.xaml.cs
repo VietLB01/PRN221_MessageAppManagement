@@ -29,7 +29,8 @@ namespace MessageApp.Pages
        
         private void register_Click(object sender, RoutedEventArgs e)
         {
-            AuthenView.Instance.FrameMain.Content = new Register();
+            AuthenView authenView = (AuthenView)Window.GetWindow(this);
+            authenView.FrameMain.Content = new Register();   
         }
 
       

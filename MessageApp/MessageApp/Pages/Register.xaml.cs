@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MessageApp.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace MessageApp.Pages
         public Register()
         {
             InitializeComponent();
+        }
+
+      
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            AuthenView authenView = (AuthenView)Window.GetWindow(this);
+            authenView.FrameMain.Content = new Login();
         }
     }
 }
