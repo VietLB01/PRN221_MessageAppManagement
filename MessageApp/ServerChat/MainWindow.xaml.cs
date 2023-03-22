@@ -25,12 +25,16 @@ namespace ServerChat
     public partial class MainWindow : Window
     {
         SimpleTcpServer server = null;
-        List<Account> listAccConnected = new List<Account>();
+        List<AccountManagement> listAccConnected = new List<AccountManagement>();
+        Account accConnect;
+        string IpAddr;
         string data = "";
+        MessageApplicationContext context;
         public MainWindow()
         {
             InitializeComponent();
             string addr = "127.0.0.1:8000";
+            context = new MessageApplicationContext();
             server = new SimpleTcpServer(addr);
             server.Events.ClientConnected += Events_ClientConnected;
             server.Events.ClientDisconnected += Events_ClientDisconnected;
@@ -40,9 +44,23 @@ namespace ServerChat
         private  void Events_DataReceived(object? sender, DataReceivedEventArgs e)
         {
             data = Encoding.UTF8.GetString(e.Data).ToString();
-            if (data.Length >= 25 && data.Substring(0, 25) == "#l*o*g*g*e*d*i*n*u*s*e*r#")
+            if (data.Length >= 13 && data.Substring(0,13) == "accIdConnect#")
             {
-                
+                int accId = int.Parse(data.Substring(13));
+                Account account = context.Accounts.FirstOrDefault(account=> account.AccountId == accId);
+
+                listAccConnected.Add(new AccountManagement(account, IpAddr));
+               
+                foreach (var acc in listAccConnected)
+                {
+                    server.Send( acc.IpAddress, $"newConnect#{accId}");
+                }
+            }
+            else {
+            
+                 
+            
+            
             }
         }
 
@@ -55,10 +73,10 @@ namespace ServerChat
         {
             Dispatcher.BeginInvoke(new Action(delegate
             {
-               // connectedIpPorts.Add(e.IpPort);
                 if (server.IsListening)
                 {
-                    server.Send($"server: you are connected to server: {e.IpPort}", e.IpPort);
+                    IpAddr = e.IpPort.ToString();
+                    
                 }
             }));
         }

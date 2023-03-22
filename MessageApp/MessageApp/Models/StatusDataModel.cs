@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatApp_SignalR.Models
+namespace MessageApp.Models
 {
     public class StatusDataModel
     {
