@@ -136,3 +136,7 @@ E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageA
 E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\bin\Debug\net6.0-windows\ContractLibrary.dll
 E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\bin\Debug\net6.0-windows\ContractLibrary.pdb
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\obj\Debug\net6.0-windows\Assets\icons.baml
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\obj\Debug\net6.0-windows\CustomControl\ChatList.g.cs
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\obj\Debug\net6.0-windows\CustomControl\StatusThumbs.g.cs
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs

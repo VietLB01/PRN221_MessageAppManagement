@@ -25,7 +25,7 @@ namespace ServerChat
     public partial class MainWindow : Window
     {
         SimpleTcpServer server = null;
-        List<string> listIdAccConnected = new List<string>();
+        List<Account> listAccConnected = new List<Account>();
         string data = "";
         public MainWindow()
         {
@@ -40,9 +40,9 @@ namespace ServerChat
         private  void Events_DataReceived(object? sender, DataReceivedEventArgs e)
         {
             data = Encoding.UTF8.GetString(e.Data).ToString();
-            if (data.Length >= 13 && data.Substring(0, 13) == "accIdConnect#")
+            if (data.Length >= 25 && data.Substring(0, 25) == "#l*o*g*g*e*d*i*n*u*s*e*r#")
             {
-               listIdAccConnected.Add(data.Substring(13));
+                
             }
         }
 
