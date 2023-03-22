@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageApp", "MessageApp\MessageApp.csproj", "{1D2456E5-92D5-4A2E-BC2F-35CDD35EBFDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractLibrary", "ContractLibrary\ContractLibrary.csproj", "{6AA30A30-FDCF-4CF4-B49D-EA3ECA53E379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContractLibrary", "ContractLibrary\ContractLibrary.csproj", "{6AA30A30-FDCF-4CF4-B49D-EA3ECA53E379}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{2273437D-6E9B-4167-AB3B-8BA6F8AC5EBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerChat", "ServerChat\ServerChat.csproj", "{EF18DC65-A76F-4A52-BDEB-9B89255C5AD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{6AA30A30-FDCF-4CF4-B49D-EA3ECA53E379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AA30A30-FDCF-4CF4-B49D-EA3ECA53E379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AA30A30-FDCF-4CF4-B49D-EA3ECA53E379}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2273437D-6E9B-4167-AB3B-8BA6F8AC5EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2273437D-6E9B-4167-AB3B-8BA6F8AC5EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2273437D-6E9B-4167-AB3B-8BA6F8AC5EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2273437D-6E9B-4167-AB3B-8BA6F8AC5EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF18DC65-A76F-4A52-BDEB-9B89255C5AD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF18DC65-A76F-4A52-BDEB-9B89255C5AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF18DC65-A76F-4A52-BDEB-9B89255C5AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF18DC65-A76F-4A52-BDEB-9B89255C5AD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
