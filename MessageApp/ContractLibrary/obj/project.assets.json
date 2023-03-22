@@ -2828,19 +2828,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\asus\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj",
       "projectName": "ContractLibrary",
-      "projectPath": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj",
-      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2901,7 +2901,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
