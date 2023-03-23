@@ -19,9 +19,7 @@ using System.Windows.Threading;
 
 namespace ServerChat
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
         SimpleTcpServer server = null;
@@ -57,10 +55,15 @@ namespace ServerChat
                 }
             }
             else {
-            
-                 
-            
-            
+
+                string[] all = data.Split(":");
+                if (all[0].Equals("image#"))
+                {
+                    string filename = all[1];
+
+                } 
+
+
             }
         }
 

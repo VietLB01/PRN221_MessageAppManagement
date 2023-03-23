@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageApp", "MessageApp\Me
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContractLibrary", "ContractLibrary\ContractLibrary.csproj", "{6AA30A30-FDCF-4CF4-B49D-EA3ECA53E379}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerChat", "ServerChat\ServerChat.csproj", "{EF18DC65-A76F-4A52-BDEB-9B89255C5AD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerChat", "ServerChat\ServerChat.csproj", "{EF18DC65-A76F-4A52-BDEB-9B89255C5AD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
