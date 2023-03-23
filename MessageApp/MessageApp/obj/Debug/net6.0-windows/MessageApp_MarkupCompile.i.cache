@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\App.xaml
-7582845242
+8787953813
 
-12-867471300
+13407371351
 235-404412013
-Assets\icons.xaml;CustomControl\ChatList.xaml;CustomControl\StatusThumbs.xaml;MainWindow.xaml;Pages\Login.xaml;Pages\Register.xaml;View\AuthenView.xaml;
+MainWindow.xaml;Pages\Login.xaml;Pages\Register.xaml;Themes\ChatItem.xaml;Themes\ContactCard.xaml;Themes\MessageBox.xaml;Themes\StylistScrollBar.xaml;View\AuthenView.xaml;
 
-False
+True
 
