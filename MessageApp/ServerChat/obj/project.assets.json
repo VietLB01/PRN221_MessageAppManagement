@@ -2818,19 +2818,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\asus\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ServerChat\\ServerChat.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Downloads\\PRN221_MessageAppManagement\\MessageApp\\ServerChat\\ServerChat.csproj",
       "projectName": "ServerChat",
-      "projectPath": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ServerChat\\ServerChat.csproj",
-      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ServerChat\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Downloads\\PRN221_MessageAppManagement\\MessageApp\\ServerChat\\ServerChat.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Downloads\\PRN221_MessageAppManagement\\MessageApp\\ServerChat\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2844,8 +2844,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj": {
-              "projectPath": "E:\\Ki7\\PRN221\\Project\\MessageApp\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj"
+            "C:\\Users\\Admin\\Downloads\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Downloads\\PRN221_MessageAppManagement\\MessageApp\\ContractLibrary\\ContractLibrary.csproj"
             }
           }
         }
@@ -2884,7 +2884,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
