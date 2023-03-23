@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\obj\Debug\net6.0-windows\
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\MessageApp\obj\Debug\net6.0-windows\
 MessageApp
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\App.xaml
-7582845242
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\MessageApp\App.xaml
+5504742068
 
-10225634747
-235-404412013
-Assets\icons.xaml;CustomControl\ChatList.xaml;CustomControl\StatusThumbs.xaml;MainWindow.xaml;Pages\Login.xaml;Pages\Register.xaml;View\AuthenView.xaml;
+9958308606
+2352122409356
+MainWindow.xaml;Pages\Login.xaml;Pages\Register.xaml;Themes\ContactCard.xaml;View\AuthenView.xaml;
 
-True
+False
 

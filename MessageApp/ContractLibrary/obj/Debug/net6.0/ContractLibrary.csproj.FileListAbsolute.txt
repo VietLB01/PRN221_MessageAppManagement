@@ -12,3 +12,17 @@ E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\Contract
 E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ContractLibrary.pdb
 E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ContractLibrary.genruntimeconfig.cache
 E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ref\ContractLibrary.dll
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\bin\Debug\net6.0\ContractLibrary.deps.json
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\bin\Debug\net6.0\ContractLibrary.runtimeconfig.json
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\bin\Debug\net6.0\ContractLibrary.dll
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\bin\Debug\net6.0\ContractLibrary.pdb
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ContractLibrary.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ContractLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ContractLibrary.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ContractLibrary.AssemblyInfo.cs
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ContractLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ContractLibrary.dll
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\refint\ContractLibrary.dll
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ContractLibrary.pdb
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ContractLibrary.genruntimeconfig.cache
+C:\Users\Admin\Downloads\PRN221_MessageAppManagement\MessageApp\ContractLibrary\obj\Debug\net6.0\ref\ContractLibrary.dll
