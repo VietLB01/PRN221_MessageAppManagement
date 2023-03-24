@@ -33,5 +33,10 @@ namespace MessageApp.Pages
             AuthenView authenView = (AuthenView)Window.GetWindow(this);
             authenView.FrameMain.Content = new Login();
         }
+
+        private void PackIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

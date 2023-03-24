@@ -15,7 +15,7 @@
         <materialDesign:PackIcon Kind="Close" VerticalAlignment="Top"
                                  Width="20" Height="20" HorizontalAlignment="Right"
                                  Opacity="0.3"
-                                  Margin="0 13 14 0"/>
+                                  Margin="0 13 14 0" MouseDown="PackIcon_MouseDown"/>
         <!--Input-->
         <StackPanel VerticalAlignment="Center" Margin="75 0">
             <TextBlock FontSize="24" Text="REGISTER" TextAlignment="Center"></TextBlock>

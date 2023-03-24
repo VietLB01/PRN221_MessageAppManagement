@@ -12,15 +12,15 @@
 
     <Grid>
         <!--close icon-->
-        <materialDesign:PackIcon Kind="Close" VerticalAlignment="Top"
+        <materialDesign:PackIcon Name="btClose" Kind="Close" VerticalAlignment="Top"
                                  Width="20" Height="20" HorizontalAlignment="Right"
                                  Opacity="0.3"
-                                  Margin="0 13 14 0"/>
+                                  Margin="0 13 14 0"  MouseDoubleClick="btClose_MouseDoubleClick"/>
         <!--Input-->
         <StackPanel VerticalAlignment="Center" Margin="75 0">
             <TextBlock FontSize="24" Text="LOGIN" TextAlignment="Center"></TextBlock>
            
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            <TextBox  Name="tbUsername" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      materialDesign:HintAssist.Hint="Username"
                       materialDesign:HintAssist.FloatingOffset="0, -20"
                      Margin="0 15"
@@ -28,7 +28,7 @@
                      BorderThickness="0 0 0 1.5"
 
                      />
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            <TextBox Name="tbPassword" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      materialDesign:HintAssist.Hint="Password"
                       materialDesign:HintAssist.FloatingOffset="0, -20"
                      BorderBrush="#c5c8cc"

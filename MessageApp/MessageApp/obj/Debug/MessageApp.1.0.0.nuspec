@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MessageApp</id>
+    <version>1.0.0</version>
+    <authors>MessageApp</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0-windows7.0">
+        <dependency id="ContractLibrary" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="MaterialDesignThemes" version="4.8.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="7.0.4" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Json" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.ServiceModel.Primitives" version="4.10.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net6.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\bin\Debug\net6.0-windows\MessageApp.runtimeconfig.json" target="lib\net6.0-windows7.0\MessageApp.runtimeconfig.json" />
+    <file src="E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\bin\Debug\net6.0-windows\MessageApp.dll" target="lib\net6.0-windows7.0\MessageApp.dll" />
+  </files>
+</package>

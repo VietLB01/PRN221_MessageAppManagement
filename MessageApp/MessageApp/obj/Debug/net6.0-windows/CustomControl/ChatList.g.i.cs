@@ -53,7 +53,7 @@ namespace MessageApp.CustomControl {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MessageApp;V1.0.0.0;component/customcontrol/chatlist.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MessageApp;component/customcontrol/chatlist.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\CustomControl\ChatList.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace ContractLibrary.Models;
 
-public partial class Message
+public partial class Message 
 {
     public int Id { get; set; }
 
@@ -18,4 +19,5 @@ public partial class Message
     public virtual Account? AccountIdAcceptNavigation { get; set; }
 
     public virtual Account? AccountIdSendNavigation { get; set; }
+   
 }

@@ -3,10 +3,248 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MessageApp"
+        xmlns:local="clr-namespace:MessageApp" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:viewmodel="clr-namespace:MessageApp.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="650" Width="700"
+        Background="WhiteSmoke"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        FontFamily="../Fonts/#ProductSans-Regular"
+        FontSize="16"
+        WindowStartupLocation="CenterScreen"
+        >
+
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="ContactInfoButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+
+        </Style>
+        <ControlTemplate x:Key="ContactInfoButtonTemplate" TargetType="{x:Type Button}">
+            <Border 
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+                <Grid VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <!--Profile photo-->
+                        <ColumnDefinition Width="75"/>
+                        <!--Name & Oline status-->
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.ColumnSpan="2"
+                Background="#49a078"
+                MouseDown="Border_MouseDown">
+            <Grid HorizontalAlignment="Stretch">
+
+                <StackPanel Orientation="Horizontal">
+                    <Ellipse Margin="10,4,1,8" RenderTransformOrigin="0.5,0.5" Width="28" Height="35">
+                        
+                        <Ellipse.Fill>
+                            <ImageBrush 
+                            ImageSource="https://icon-library.com/images/send-message-icon-png/send-message-icon-png-27.jpg"
+                            Stretch="Uniform"/>
+                        </Ellipse.Fill>
+
+                    </Ellipse>
+                    <TextBlock Text=" Message Application" FontSize="16" Foreground="Black" FontWeight="SemiBold" Width="203" Height="24"/>
+                </StackPanel>
+                <materialDesign:PackIcon Name="btClose" Kind="Close" VerticalAlignment="Top"
+                                 Width="20" Height="20" HorizontalAlignment="Right"
+                                 Opacity="0.3"
+                                  Margin="0 13 14 0"  MouseDoubleClick="btClose_MouseDoubleClick"/>
+                <StackPanel HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+                    <Button Width="20" Height="20" Foreground="Black" Content="X" Background="Transparent"  BorderThickness="0" Click="Button_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+
+        <Grid Background="WhiteSmoke" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Contacts" VerticalAlignment="Center" FontWeight="Medium" Foreground="Black" Margin="8,0,0,0"/>
+
+            <ListView Name="lvAccounts" ItemsSource="{Binding Accounts}" Background="Transparent" BorderThickness="0" Grid.Row="1"
+                      ItemContainerStyle="{StaticResource ContactCard}" PreviewMouseLeftButtonUp="lvAccounts_PreviewMouseLeftButtonUp"/>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Background="WhiteSmoke">
+                <Border CornerRadius="25" Width="10" Height="10" Background="#3bff6f"
+                        Margin="18,0,0,0"/>
+                <StackPanel VerticalAlignment="Center">
+                    <Label Name="lbUser" Content="Username" Foreground="Black" FontWeight="SemiBold" Margin="0,-5,0,-5" FontSize="15"/>
+                    <Label Content="Online" Foreground="Gray" FontWeight="SemiBold" FontSize="10" Margin="0,-8,0,-5"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+
+        <Grid Grid.Column="1" Grid.Row="1" ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <!--Conversation header-->
+                <RowDefinition Height="75"/>
+                <!--Conversation body-->
+                <RowDefinition Name="row2"  Height="450"/>
+                <!--SendMessageBox-->
+                <RowDefinition Height="99"/>
+            </Grid.RowDefinitions>
+            <Grid 
+                Height="75"
+                Margin="0,0,15,0"
+                VerticalAlignment="Stretch" >
+
+
+                <Grid.ColumnDefinitions>
+                    <!--Contract header and online status-->
+                    <ColumnDefinition/>
+
+                    <!--video call button-->
+                    <ColumnDefinition Width="50"/>
+
+                    <!-- Call button-->
+                    <ColumnDefinition Width="50"/>
+                    <!-- Search message Button-->
+                    <ColumnDefinition Width="50"/>
+                    <!-- more option-->
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Ellipse Margin="2,20,210,13">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="ImgContectName"
+                           
+                            Stretch="UniformToFill"/>
+                    </Ellipse.Fill>
+
+                </Ellipse>
+                <TextBlock  Name="tbContactName" Margin="65,30,23,0" 
+                        
+                        FontWeight="Bold"
+                        FontSize="15">
+                </TextBlock>
+
+
+                <!--Videcall Button-->
+                <Button 
+                        Content="{StaticResource videocall}"
+                        Grid.Column="1"
+                        Style="{StaticResource IconButtonStyle}"/>
+
+                <!--Call Button-->
+                <Button
+                        Content="{StaticResource call}"
+                        Grid.Column="2"
+                        Style="{StaticResource IconButtonStyle}"/>
+
+                <!--SearchButton-->
+                <Button
+                        Command="{Binding OpenConversationSearchCommand}"
+                        Content="{StaticResource search}"
+                        Grid.Column="3"
+                        Style="{StaticResource IconButtonStyle}"/>
+
+                <!--More Options Button-->
+                <ToggleButton 
+                        Grid.Column="4"
+                        x:Name="ConversationMoreOptions"
+                        Content="{StaticResource more}"
+                        Command="{Binding ConversationScreenMoreOptionsCommand}"
+                        Style="{StaticResource ToggleIconButtonStyle}"/>
+
+
+            </Grid>
+
+            <ScrollViewer Grid.Row="1" >
+                <StackPanel >
+                    <Frame x:Name="FrameTest"/>
+                </StackPanel>
+            </ScrollViewer>
+
+            <Grid Grid.Row="3">
+                <Border
+                        Background="#dce1de"
+                        CornerRadius="15"
+                        Height="50"
+                        Margin="10,-19,10,-4">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <!--Textbox Button-->
+                            <ColumnDefinition/>
+
+                            <!--Attachment Button & Send Message Button-->
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox 
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Padding="12,0"
+                                Text="{Binding MessageText, UpdateSourceTrigger=PropertyChanged}"
+                                VerticalAlignment="Stretch"
+                                VerticalContentAlignment="Center"
+                                x:Name="MessageBox">
+                            <!--Set Focus on MessageBox when FocusMessageBox = true-->
+                            <TextBox.Style>
+                                <Style TargetType="{x:Type TextBox}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding FocusMessageBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Value="True">
+                                            <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=MessageBox}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+                            <TextBox.InputBindings>
+                                <!--key Binding to Send Message on 'Enter' key press-->
+                                <KeyBinding Command="{Binding SendMessageCommand}" CommandParameter="{Binding}" Key="Return"/>
+                            </TextBox.InputBindings>
+                        </TextBox>
+
+                        <!--Buttons-->
+                        <StackPanel 
+                        Grid.Column="1"
+                        Orientation="Horizontal">
+                            <ToggleButton 
+                            Content="{StaticResource attach}"
+                            x:Name="AttachButton"
+                                    Command="{Binding AttachmentOptionsCommand}"
+                            Style="{StaticResource ToggleIconButtonStyle}"/>
+                            <Button 
+                            Content="{StaticResource send}"
+                            x:Name="SendMsgButton"
+                            Style="{StaticResource IconButtonStyle}"
+                                    Command="{Binding SendMessageCommand}"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+
+        </Grid>
+
 
     </Grid>
 </Window>

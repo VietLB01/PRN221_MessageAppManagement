@@ -1,4 +1,5 @@
-﻿using MessageApp.View;
+﻿using ContractLibrary.Models;
+using MessageApp.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,10 @@ namespace MessageApp.Pages
     /// </summary>
     public partial class Login : Page
     {
+        MessageApplicationContext db;
         public Login()
         {
+            db = new MessageApplicationContext();
             InitializeComponent();
         }
 
@@ -36,7 +39,31 @@ namespace MessageApp.Pages
 
         private void btLogin_Click(object sender, RoutedEventArgs e)
         {
-            //AuthenView.Instance.connection.On<String>
+            string username = tbUsername.Text;
+            string password = tbPassword.Text;
+            if(username != null && password != null)
+            {
+                Account a = db.Accounts.FirstOrDefault(x => x.Username == username && x.Password ==password);
+                if(a != null)
+                {
+                    MainWindow an = new MainWindow(a);
+                    an.Show();
+                    AuthenView authenView = (AuthenView)Window.GetWindow(this);
+                    authenView.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Login failed");
+                }
+            }
+            else{
+                MessageBox.Show("Username and password must be not empty");
+            }
+        }
+
+        private void btClose_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

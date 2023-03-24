@@ -8,17 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Model\**" />
-    <Compile Remove="ViewModel\**" />
-    <EmbeddedResource Remove="Model\**" />
-    <EmbeddedResource Remove="ViewModel\**" />
-    <None Remove="Model\**" />
-    <None Remove="ViewModel\**" />
-    <Page Remove="Model\**" />
-    <Page Remove="ViewModel\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.8.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.4">
       <PrivateAssets>all</PrivateAssets>
