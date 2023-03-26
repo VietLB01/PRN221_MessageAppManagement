@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:viewmodel="clr-namespace:MessageApp.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="700"
+        Title="MainWindow" Height="710" Width="700"
         Background="WhiteSmoke"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -15,6 +15,7 @@
         FontFamily="../Fonts/#ProductSans-Regular"
         FontSize="16"
         WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
         >
 
     <Window.DataContext>
@@ -85,16 +86,21 @@
         <Grid Background="WhiteSmoke" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
-                <RowDefinition/>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="250"/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
 
             <Label Content="Contacts" VerticalAlignment="Center" FontWeight="Medium" Foreground="Black" Margin="8,0,0,0"/>
 
             <ListView Name="lvAccounts" ItemsSource="{Binding Accounts}" Background="Transparent" BorderThickness="0" Grid.Row="1"
-                      ItemContainerStyle="{StaticResource ContactCard}" PreviewMouseLeftButtonUp="lvAccounts_PreviewMouseLeftButtonUp"/>
-
-            <StackPanel Grid.Row="2" Orientation="Horizontal" Background="WhiteSmoke">
+                      ItemContainerStyle="{StaticResource ContactCard}"  PreviewMouseLeftButtonUp="lvAccounts_PreviewMouseLeftButtonUp" />
+            <ListView Name="lvGroups"  Background="Transparent" BorderThickness="0" Grid.Row="3"
+                      ItemContainerStyle="{StaticResource ContactGroup}"  PreviewMouseLeftButtonUp="lvGroups_PreviewMouseLeftButtonUp" />
+            <Label Content="Groups" VerticalAlignment="Center"  Grid.Row="2" FontWeight="Medium" Foreground="Black" Margin="8,0,0,0"
+                   />
+            <StackPanel Grid.Row="4" Orientation="Horizontal" Background="WhiteSmoke">
                 <Border CornerRadius="25" Width="10" Height="10" Background="#3bff6f"
                         Margin="18,0,0,0"/>
                 <StackPanel VerticalAlignment="Center">
@@ -110,7 +116,7 @@
                 <!--Conversation header-->
                 <RowDefinition Height="75"/>
                 <!--Conversation body-->
-                <RowDefinition Name="row2"  Height="450"/>
+                <RowDefinition Name="row2"  />
                 <!--SendMessageBox-->
                 <RowDefinition Height="99"/>
             </Grid.RowDefinitions>
@@ -142,11 +148,14 @@
                     </Ellipse.Fill>
 
                 </Ellipse>
-                <TextBlock  Name="tbContactName" Margin="65,30,23,0" 
+                <StackPanel  Margin="65,30,23,0" >
+                    <TextBlock  Name="tbContactName"
                         
                         FontWeight="Bold"
                         FontSize="15">
-                </TextBlock>
+                    </TextBlock>
+                    <TextBlock x:Name="lbnumGroups" FontSize="12"></TextBlock>
+                </StackPanel>
 
 
                 <!--Videcall Button-->
@@ -179,7 +188,7 @@
 
             </Grid>
 
-            <ScrollViewer Grid.Row="1" >
+            <ScrollViewer x:Name="scrollview" Grid.Row="1" >
                 <StackPanel >
                     <Frame x:Name="FrameTest"/>
                 </StackPanel>
@@ -237,7 +246,7 @@
                             Content="{StaticResource send}"
                             x:Name="SendMsgButton"
                             Style="{StaticResource IconButtonStyle}"
-                                    Command="{Binding SendMessageCommand}"/>
+                                    Command="{Binding SendMessageCommand}" Click="SendMsgButton_Click"/>
                         </StackPanel>
                     </Grid>
                 </Border>

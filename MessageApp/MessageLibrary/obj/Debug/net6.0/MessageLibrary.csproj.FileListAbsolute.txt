@@ -1,0 +1,14 @@
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\bin\Debug\net6.0\MessageLibrary.deps.json
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\bin\Debug\net6.0\MessageLibrary.runtimeconfig.json
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\bin\Debug\net6.0\MessageLibrary.dll
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\bin\Debug\net6.0\MessageLibrary.pdb
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\obj\Debug\net6.0\MessageLibrary.csproj.AssemblyReference.cache
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\obj\Debug\net6.0\MessageLibrary.GeneratedMSBuildEditorConfig.editorconfig
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\obj\Debug\net6.0\MessageLibrary.AssemblyInfoInputs.cache
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\obj\Debug\net6.0\MessageLibrary.AssemblyInfo.cs
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\obj\Debug\net6.0\MessageLibrary.csproj.CoreCompileInputs.cache
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\obj\Debug\net6.0\MessageLibrary.dll
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\obj\Debug\net6.0\refint\MessageLibrary.dll
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\obj\Debug\net6.0\MessageLibrary.pdb
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\obj\Debug\net6.0\MessageLibrary.genruntimeconfig.cache
+E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageLibrary\obj\Debug\net6.0\ref\MessageLibrary.dll

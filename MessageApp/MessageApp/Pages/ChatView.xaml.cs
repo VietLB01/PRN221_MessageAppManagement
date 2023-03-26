@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,7 @@ namespace MessageApp.Pages
     {
         public int accCur;
         public int accIdAccept;
+     
         public ChatView(int accIdCur, int accIdAccept)
         {
             InitializeComponent();
@@ -35,29 +37,6 @@ namespace MessageApp.Pages
             {
 
                 if (m.AccountIdSend == accCur)
-                {
-                    TextBlock text = new TextBlock();
-                    text.Text = m.Content;
-                    text.Margin = new Thickness(20, 10, 10, 10);
-                    TextBlock time = new TextBlock();
-                    time.Text = String.Format("{0:f}", m.Time);
-                    time.FontSize = 10;
-                    time.HorizontalAlignment = HorizontalAlignment.Left;
-                    time.Margin = new Thickness(20, 10, 10, 10);
-                    Border b = new Border();
-                    b.Width = 200;
-                    b.Height = 50;
-                    b.BorderBrush = Brushes.Green;
-                    b.Margin =  new Thickness(10, 20, 20, 10);
-                    b.CornerRadius = new CornerRadius(15);
-                    b.BorderThickness = new Thickness(1);
-                    b.Background = Brushes.White;
-                    b.Child = text;
-                    b.HorizontalAlignment = HorizontalAlignment.Left;
-                    chatlist.Children.Add(b);
-                    chatlist.Children.Add(time);
-                }
-                else
                 {
                     TextBlock text = new TextBlock();
                     text.Text = m.Content;
@@ -79,18 +58,47 @@ namespace MessageApp.Pages
                     b.HorizontalAlignment = HorizontalAlignment.Right;
                     chatlist.Children.Add(b);
                     chatlist.Children.Add(time);
+
+
+                    
+                }
+                else
+                {
+                    TextBlock text = new TextBlock();
+                    text.Text = m.Content;
+                    text.Margin = new Thickness(20, 10, 10, 10);
+                    TextBlock time = new TextBlock();
+                    time.Text = String.Format("{0:f}", m.Time);
+                    time.FontSize = 10;
+                    time.HorizontalAlignment = HorizontalAlignment.Left;
+                    time.Margin = new Thickness(20, 10, 10, 10);
+                    Border b = new Border();
+                    b.Width = 200;
+                    b.Height = 50;
+                    b.BorderBrush = Brushes.Green;
+                    b.Margin = new Thickness(10, 20, 20, 10);
+                    b.CornerRadius = new CornerRadius(15);
+                    b.BorderThickness = new Thickness(1);
+                    b.Background = Brushes.White;
+                    b.Child = text;
+                    b.HorizontalAlignment = HorizontalAlignment.Left;
+                    chatlist.Children.Add(b);
+                    chatlist.Children.Add(time);
                 }
 
             }
         }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        public  void loadMessage()
         {
             using (MessageApplicationContext context = new MessageApplicationContext())
             {
                 List<Message> messages = context.Messages.Where(x => (x.AccountIdSend == accCur && x.AccountIdAccept == accIdAccept) || (x.AccountIdSend == accIdAccept && x.AccountIdAccept == accCur)).ToList();
                 creatConversiton(messages);
             }
+        }
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+           loadMessage();
         }
     }
 }

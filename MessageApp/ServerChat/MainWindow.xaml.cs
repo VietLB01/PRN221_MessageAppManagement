@@ -1,4 +1,5 @@
-﻿using ContractLibrary.Models;
+﻿using ContractLibrary;
+using ContractLibrary.Models;
 using SuperSimpleTcp;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ using System.Windows.Threading;
 
 namespace ServerChat
 {
-    
+
     public partial class MainWindow : Window
     {
         SimpleTcpServer server = null;
@@ -41,30 +42,44 @@ namespace ServerChat
         }
         private  void Events_DataReceived(object? sender, DataReceivedEventArgs e)
         {
-            data = Encoding.UTF8.GetString(e.Data).ToString();
-            if (data.Length >= 13 && data.Substring(0,13) == "accIdConnect#")
+            Dispatcher.BeginInvoke(new Action(delegate
             {
-                int accId = int.Parse(data.Substring(13));
-                Account account = context.Accounts.FirstOrDefault(account=> account.AccountId == accId);
-
-                listAccConnected.Add(new AccountManagement(account, IpAddr));
-               
-                foreach (var acc in listAccConnected)
+                data = Encoding.UTF8.GetString(e.Data).ToString();
+                if (data.Length >= 13 && data.Substring(0, 13) == "accIdConnect#")
                 {
-                    server.Send( acc.IpAddress, $"newConnect#{accId}");
+                    int accId = int.Parse(data.Substring(13));
+                    Account account = context.Accounts.FirstOrDefault(account => account.AccountId == accId);
+
+                    listAccConnected.Add(new AccountManagement(account, IpAddr));
+
+                    foreach (var acc in listAccConnected)
+                    {
+                        server.Send(acc.IpAddress, $"newConnect#{accId}");
+                    }
                 }
-            }
-            else {
-
-                string[] all = data.Split(":");
-                if (all[0].Equals("image#"))
+                else
                 {
-                    string filename = all[1];
 
-                } 
+                    string[] all = data.Split(":");
+                    if (all[0].Equals("newmes#"))
+                    {
+                        int accSend = int.Parse(all[1].ToString());
+                        int accAcept = int.Parse(all[2].ToString());
+                        string mes = all[3].ToString();
+                        AccountManagement accWantToSend = listAccConnected.FirstOrDefault(x => x.account.AccountId == accAcept);
+                        if (accWantToSend != null)
+                        {
+                            server.Send(accWantToSend.IpAddress, data);
+                        }
 
 
-            }
+
+                    }
+
+
+                }
+            }));
+           
         }
 
         private  void Events_ClientDisconnected(object? sender, ConnectionEventArgs e)

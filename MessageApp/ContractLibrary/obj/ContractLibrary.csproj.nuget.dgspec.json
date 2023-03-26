@@ -53,10 +53,6 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[7.0.0, )"
-            },
-            "System.ServiceModel.Primitives": {
-              "target": "Package",
-              "version": "[4.10.1, )"
             }
           },
           "imports": [
