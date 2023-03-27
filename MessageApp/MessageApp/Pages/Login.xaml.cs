@@ -40,12 +40,14 @@ namespace MessageApp.Pages
         private void btLogin_Click(object sender, RoutedEventArgs e)
         {
             string username = tbUsername.Text;
-            string password = tbPassword.Text;
+            string password = tbPassword.Password;
             if(username != null && password != null)
             {
                 Account a = db.Accounts.FirstOrDefault(x => x.Username == username && x.Password ==password);
                 if(a != null)
                 {
+                    a.IsOnline = true;
+                    db.SaveChanges();
                     MainWindow an = new MainWindow(a);
                     an.Show();
                     AuthenView authenView = (AuthenView)Window.GetWindow(this);

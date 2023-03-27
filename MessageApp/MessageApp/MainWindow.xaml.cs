@@ -34,12 +34,15 @@ namespace MessageApp
         string serverAddress = "127.0.0.1:8000";
         public MainWindow(Account a)
         {
+
             InitializeComponent();
             context = new MessageApplicationContext();
             curAcc= a;
+           
             lbUser.Content= curAcc.Firstname + " " + curAcc.Lastname;
-                listgroups = context.Groups.Where(x => x.Accounts.Contains(curAcc)).ToList();
+            listgroups = context.Groups.Where(x => x.Accounts.Contains(curAcc)).ToList();
             lvGroups.ItemsSource = listgroups;
+            
                               
         }
         SimpleTcpClient client;
@@ -69,15 +72,13 @@ namespace MessageApp
         {
             Dispatcher.BeginInvoke(new Action(delegate
             {
-                //txtLog.Text += Encoding.UTF8.GetString(e.Data) + Environment.NewLine ;
-                string data = Encoding.UTF8.GetString(e.Data).ToString();
-                if (data.Length >= 13 && data.Substring(0, 13) == "accIdConnect#")
-                {
+                string data = Encoding.UTF8.GetString(e.Data).ToString();        
+                  string[] all = data.Split(":");
 
-                }
-                else
-                {
-                    string[] all = data.Split(":");
+                    if (all[0].Equals("newConnect#"))
+                    {
+                        lvAccounts.ItemsSource = context.Accounts.ToList();
+                    }
                     if (all[0].Equals("newmes#"))
                     {
                         int accSend = int.Parse(all[1].ToString());
@@ -97,13 +98,20 @@ namespace MessageApp
                         scrollview.ScrollToBottom();
                         MessageBox.Text = string.Empty;
                     }
-                }
+                    if (all[0].Equals("AccIdOff#"))
+                    {
+                        lvAccounts.ItemsSource = context.Accounts.ToList();
+                    }
+                
             }));
         }
 
         private void Events_Disconnected(object? sender, ConnectionEventArgs e)
         {
-            throw new NotImplementedException();
+            Dispatcher.BeginInvoke(new Action(delegate
+            {
+
+            }));
         }
 
         private void Events_Connected(object? sender, ConnectionEventArgs e)

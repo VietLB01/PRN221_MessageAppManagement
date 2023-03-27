@@ -16,6 +16,9 @@
     <Compile Update="Pages\ChatView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\ListAccountItems.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -42,13 +45,13 @@
     <Page Update="Pages\ChatView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\ListAccountItems.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Login.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Register.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Themes\ChatItem.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\ContactCard.xaml">

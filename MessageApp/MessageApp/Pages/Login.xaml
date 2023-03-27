@@ -28,15 +28,11 @@
                      BorderThickness="0 0 0 1.5"
 
                      />
-            <TextBox Name="tbPassword" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                     materialDesign:HintAssist.Hint="Password"
-                      materialDesign:HintAssist.FloatingOffset="0, -20"
-                     BorderBrush="#c5c8cc"
-                      Margin="0 15"
-                     BorderThickness="0 0 0 1.5"
 
-                     />
-          
+            <PasswordBox  x:Name="tbPassword" BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" PasswordChar="*"
+                         materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Password" 
+                         Password="123" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 15" />
+            
             <StackPanel Orientation="Horizontal">
                 <Button Name="btLogin" Content="Login" Background="#05b790"
                         Foreground="#ffffff" 

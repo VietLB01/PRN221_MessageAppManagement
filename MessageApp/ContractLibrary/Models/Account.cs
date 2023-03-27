@@ -18,6 +18,8 @@ public partial class Account
     public string? Password { get; set; }
 
     public string? Avatar { get; set; }
+
+    public bool? IsOnline { get; set; }
     public string FullName
     {
 
@@ -27,6 +29,7 @@ public partial class Account
         }
 
     }
+
     public virtual ICollection<Message> MessageAccountIdAcceptNavigations { get; } = new List<Message>();
 
     public virtual ICollection<Message> MessageAccountIdSendNavigations { get; } = new List<Message>();

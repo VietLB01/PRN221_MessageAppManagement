@@ -14,9 +14,6 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
                 <ResourceDictionary Source="./Themes/ContactCard.xaml"/>
                 <ResourceDictionary Source="./Themes/ContactGroup.xaml"/>
-                <ResourceDictionary Source="./Themes/ChatItem.xaml"/>
-                <ResourceDictionary Source="./Themes/MessageBox.xaml"/>
-                <ResourceDictionary Source="./Themes/StylistScrollBar.xaml"/>
                 <ResourceDictionary Source="/Icons/icons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
           

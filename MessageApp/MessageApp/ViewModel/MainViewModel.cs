@@ -1,6 +1,4 @@
 ﻿using ContractLibrary.Models;
-using MessageApp.Commands;
-using MessageApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

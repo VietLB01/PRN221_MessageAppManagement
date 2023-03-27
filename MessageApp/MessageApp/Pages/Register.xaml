@@ -23,7 +23,7 @@
                      materialDesign:HintAssist.Hint="FirstName"
                       materialDesign:HintAssist.FloatingOffset="0, -20"   
                      BorderBrush="#c5c8cc"
-                     BorderThickness="0 0 0 1.5"
+                     BorderThickness="0 0 0 1.5" x:Name="txtFirst"
 
                      />
             <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -32,7 +32,7 @@
                      Margin="0 15"
                      BorderBrush="#c5c8cc"
                      BorderThickness="0 0 0 1.5"
-
+                     x:Name="txtLast"
                      />
             <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      materialDesign:HintAssist.Hint="Username"
@@ -40,23 +40,17 @@
                      Margin="0 15"
                      BorderBrush="#c5c8cc"
                      BorderThickness="0 0 0 1.5"
+                     x:Name="txtUser"
+                     />
+            <PasswordBox  x:Name="txtPass" BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" PasswordChar="*"
+                         materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Password" 
+                         Password="123" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 15" />
 
-                     />
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                     materialDesign:HintAssist.Hint="Password"
-                      materialDesign:HintAssist.FloatingOffset="0, -20"
-                     BorderBrush="#c5c8cc"
-                      Margin="0 15"
-                     BorderThickness="0 0 0 1.5"
 
-                     />
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                     materialDesign:HintAssist.Hint="Confirm Password"
-                      materialDesign:HintAssist.FloatingOffset="0, -20"  
-                     BorderBrush="#c5c8cc"
-                      Margin="0 15"
-                     BorderThickness="0 0 0 1.5"
-                     />
+            <PasswordBox   x:Name="txtConfirm" BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" PasswordChar="*"
+                         materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Confirm Password" 
+                         Password="123" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 15" />
+         
             <StackPanel Orientation="Horizontal">
                 <Button Content="Sign up" Background="#05b790"
                         Foreground="#ffffff" 
@@ -64,7 +58,7 @@
                         FontSize="18"
                         Width="120"
                         Height="45"
-                        materialDesign:ButtonAssist.CornerRadius="22"
+                        materialDesign:ButtonAssist.CornerRadius="22" Click="Button_Click"
                         />
                 <Button Name="Login" Content="or Login"
                         Margin="5 0 0 0"

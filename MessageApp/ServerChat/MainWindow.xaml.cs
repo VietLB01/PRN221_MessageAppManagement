@@ -1,4 +1,5 @@
-﻿using ContractLibrary.Models;
+﻿using ContractLibrary;
+using ContractLibrary.Models;
 using SuperSimpleTcp;
 using System;
 using System.Collections.Generic;
@@ -51,10 +52,7 @@ namespace ServerChat
 
                     listAccConnected.Add(new AccountManagement(account, IpAddr));
 
-                    foreach (var acc in listAccConnected)
-                    {
-                        server.Send(acc.IpAddress, $"newConnect#{accId}");
-                    }
+                   
                 }
                 else
                 {
@@ -97,7 +95,20 @@ namespace ServerChat
 
         private  void Events_ClientDisconnected(object? sender, ConnectionEventArgs e)
         {
-            
+            Dispatcher.BeginInvoke(new Action(delegate
+            {
+                AccountManagement accCur = listAccConnected.SingleOrDefault(x => x.IpAddress == e.IpPort);
+                Account disConnectAccount = accCur.account;
+                disConnectAccount.IsOnline = false;
+                context.SaveChanges();
+                listAccConnected.Remove(accCur);
+                string mes = "AccIdOff#:";
+                foreach(AccountManagement acc in listAccConnected)
+                {
+                    server.Send(acc.IpAddress, mes);
+                }
+
+            }));
         }
 
         private  void Events_ClientConnected(object? sender, ConnectionEventArgs e)
@@ -107,7 +118,11 @@ namespace ServerChat
                 if (server.IsListening)
                 {
                     IpAddr = e.IpPort.ToString();
-                    
+
+                    foreach (var acc in listAccConnected)
+                    {
+                        server.Send(acc.IpAddress, $"newConnect#:");
+                    }
                 }
             }));
         }

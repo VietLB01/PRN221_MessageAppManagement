@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MessageApp" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:viewmodel="clr-namespace:MessageApp.ViewModel"
+        xmlns:viewmodel="clr-namespace:MessageApp.ViewModel" xmlns:src="clr-namespace:MessageApp.Themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="710" Width="700"
         Background="WhiteSmoke"
@@ -26,8 +26,9 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-
+           
         </Style>
+        
         <ControlTemplate x:Key="ContactInfoButtonTemplate" TargetType="{x:Type Button}">
             <Border 
                 Background="{TemplateBinding Background}"

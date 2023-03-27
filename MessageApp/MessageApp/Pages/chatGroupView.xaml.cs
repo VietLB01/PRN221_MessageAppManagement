@@ -70,11 +70,12 @@ namespace MessageApp.Pages
                     if (accIdSend != 0)
                     {
                         Account a = db.Accounts.FirstOrDefault(x => x.AccountId == accIdSend);
+                        Account sendAcc = db.Accounts.FirstOrDefault(x => x.AccountId == m.AccountIdsend);
                         TextBlock text = new TextBlock();
                         text.Text = m.Content;
                         text.Margin = new Thickness(20, 10, 10, 10);
                         TextBlock nameSend = new TextBlock();
-                        nameSend.Text = a.FullName;
+                        nameSend.Text = sendAcc.FullName;
                         nameSend.Margin = new Thickness(20, 5, 5, 3);
                         nameSend.Foreground = Brushes.Red;
                         TextBlock time = new TextBlock();

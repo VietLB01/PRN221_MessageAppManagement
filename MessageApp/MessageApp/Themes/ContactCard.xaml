@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    >
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:src="clr-namespace:MessageApp.Themes">
+
+    <src:borderConverter x:Key="borderConverter" />
     <Style TargetType="ListViewItem" x:Key="ContactCard">
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
@@ -24,7 +25,7 @@
                             <StackPanel>
                                 <Label Margin="10,10" Content="{Binding FullName}" Foreground="Black"/>
                                 <StackPanel  Margin="-15" Orientation="Horizontal">
-                                    <Border  x:Name="btStatus" CornerRadius="25" Width="10" Height="10" Background="red"
+                                    <Border  x:Name="btStatus" CornerRadius="25" Width="10" Height="10" Background="{Binding IsOnline, Converter= {StaticResource borderConverter}}"
                                     />
                                    
                                 </StackPanel>

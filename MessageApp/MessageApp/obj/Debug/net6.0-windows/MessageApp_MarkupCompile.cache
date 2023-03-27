@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 E:\Ki7\PRN221\Project\MessageApp\PRN221_MessageAppManagement\MessageApp\MessageApp\App.xaml
-13-71881378
+111958257587
 
-14-2028773752
+121571389093
 233-755964156
-Icons\icons.xaml;MainWindow.xaml;Pages\AddGroups.xaml;Pages\chatGroupView.xaml;Pages\ChatView.xaml;Pages\Login.xaml;Pages\Register.xaml;Themes\ChatItem.xaml;Themes\ContactCard.xaml;Themes\ContactGroup.xaml;Themes\MessageBox.xaml;Themes\StylistScrollBar.xaml;View\AuthenView.xaml;
+Icons\icons.xaml;MainWindow.xaml;Pages\AddGroups.xaml;Pages\chatGroupView.xaml;Pages\ChatView.xaml;Pages\ListAccountItems.xaml;Pages\Login.xaml;Pages\Register.xaml;Themes\ContactCard.xaml;Themes\ContactGroup.xaml;View\AuthenView.xaml;
 
 False
 
