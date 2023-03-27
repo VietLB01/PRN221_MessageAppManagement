@@ -1,4 +1,5 @@
-﻿using MessageApp.View;
+﻿using ContractLibrary.Models;
+using MessageApp.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,11 @@ namespace MessageApp.Pages
     /// </summary>
     public partial class Login : Page
     {
-        public Login()
+        private readonly MessageApplicationContext _context;
+        public bool IsLoggedIn = false;
+        public Login(MessageApplicationContext context)
         {
+            _context = context;
             InitializeComponent();
         }
 
@@ -36,7 +40,53 @@ namespace MessageApp.Pages
 
         private void btLogin_Click(object sender, RoutedEventArgs e)
         {
-            //AuthenView.Instance.connection.On<String>
+            if (!AllowLogin())
+            {
+                return;
+            }
+            var accCount = _context.Accounts.Where(x => x.Username == txtUserName.Text.Trim() && x.Password == txtPassword.Text.Trim()).Count();
+            var takeName = _context.Accounts.FirstOrDefault(x => x.Username == txtUserName.Text.Trim() && x.Password == txtPassword.Text.Trim());
+
+            if (accCount > 0)
+            {
+                IsLoggedIn = true;
+                if(takeName != null)
+                {
+                    var takeUserName = takeName.Lastname;
+                    if(takeUserName != null)
+                    {
+                        MainWindow mainWindow = new MainWindow(takeUserName);
+                        mainWindow.Show();
+                    }
+                    
+                }
+                
+            }
+            else
+            {
+                IsLoggedIn = false;
+                MessageBox.Show("Username or Password invalid!");
+            }
+
+        }
+
+    
+
+        private bool AllowLogin()
+        {
+            if(txtUserName.Text.Trim() == "")
+            {
+                MessageBox.Show("You must fill your username", "Alert", MessageBoxButton.OK, MessageBoxImage.Warning);
+                txtUserName.Focus();
+                return false;
+            }
+            if(txtPassword.Text.Trim() == "")
+            {
+                MessageBox.Show("You must fill your password", "Alert", MessageBoxButton.OK, MessageBoxImage.Warning);
+                txtPassword.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }
