@@ -27,7 +27,6 @@ public partial class Account
         }
 
     }
-
     public virtual ICollection<Message> MessageAccountIdAcceptNavigations { get; } = new List<Message>();
 
     public virtual ICollection<Message> MessageAccountIdSendNavigations { get; } = new List<Message>();

@@ -1,5 +1,4 @@
-﻿using ContractLibrary;
-using ContractLibrary.Models;
+﻿using ContractLibrary.Models;
 using SuperSimpleTcp;
 using System;
 using System.Collections.Generic;
@@ -71,9 +70,23 @@ namespace ServerChat
                         {
                             server.Send(accWantToSend.IpAddress, data);
                         }
+                    }
 
-
-
+                    if (all[0].Equals("groupmes#"))
+                    {
+                        int groupID = int.Parse(all[1].ToString());
+                        int accSend = int.Parse(all[2].ToString());
+                        string mes = all[3].ToString();
+                        Group s = context.Groups.FirstOrDefault(x =>x.GroupId== groupID);
+                        List<Account> a = context.Accounts.Where(x => x.Groups.Contains(s)).ToList();
+                        foreach (Account acc in a)
+                        {
+                            AccountManagement ann = listAccConnected.FirstOrDefault(x =>x.account.AccountId == acc.AccountId);
+                            if (ann != null)
+                            {
+                                server.Send(ann.IpAddress, data);
+                            }
+                        }
                     }
 
 

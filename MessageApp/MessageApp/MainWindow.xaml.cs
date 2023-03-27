@@ -87,7 +87,16 @@ namespace MessageApp
                         scrollview.ScrollToBottom();
 
                     }
-
+                    if (all[0].Equals("groupmes#"))
+                    {
+                        int groupID = int.Parse(all[1].ToString());
+                        int accSend = int.Parse(all[2].ToString());
+                        string mes = all[3].ToString();
+                        chatGroupView groupView = new chatGroupView(groupID,curAcc.AccountId, accSend);
+                        FrameTest.Content = groupView;
+                        scrollview.ScrollToBottom();
+                        MessageBox.Text = string.Empty;
+                    }
                 }
             }));
         }
@@ -147,17 +156,35 @@ namespace MessageApp
             {
                 if (!string.IsNullOrEmpty(MessageBox.Text))
                 {
-                    string msg = "newmes#:"+ curAcc.AccountId +":" + accAccept.AccountId + ":" + MessageBox.Text;
-                    client.Send(msg);
-                    Message mes = new Message();
-                    mes.AccountIdSend= curAcc.AccountId;
-                    mes.AccountIdAccept = accAccept.AccountId;
-                    mes.Content = MessageBox.Text;
-                    context.Messages.Add(mes);
-                    context.SaveChanges();
-                    FrameTest.Content = new ChatView(curAcc.AccountId, accAccept.AccountId);
-                    scrollview.ScrollToBottom();
-                    MessageBox.Text = string.Empty;
+                    if(accAccept!= null)
+                    {
+                        string msg = "newmes#:" + curAcc.AccountId + ":" + accAccept.AccountId + ":" + MessageBox.Text;
+                        client.Send(msg);
+                        Message mes = new Message();
+                        mes.AccountIdSend = curAcc.AccountId;
+                        mes.AccountIdAccept = accAccept.AccountId;
+                        mes.Content = MessageBox.Text;
+                        context.Messages.Add(mes);
+                        context.SaveChanges();
+                        FrameTest.Content = new ChatView(curAcc.AccountId, accAccept.AccountId);
+                        scrollview.ScrollToBottom();
+                        MessageBox.Text = string.Empty;
+                    }
+                    else
+                    {
+                        string msg = "groupmes#:" + curGroup.GroupId + ":" + curAcc.AccountId + ":" + MessageBox.Text;
+                        client.Send(msg);
+                        MessageGroup mes = new MessageGroup();
+                        mes.AccountIdsend = curAcc.AccountId;
+                        mes.GroupIdaccept = curGroup.GroupId;
+                        mes.Content = MessageBox.Text;
+                        context.MessageGroups.Add(mes);
+                        context.SaveChanges();
+                        chatGroupView groupView = new chatGroupView(curGroup.GroupId, curAcc.AccountId);
+                        FrameTest.Content = groupView;
+                        scrollview.ScrollToBottom();
+                        MessageBox.Text = string.Empty;
+                    }
 
                 }
 
@@ -167,8 +194,10 @@ namespace MessageApp
         private void lvGroups_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             var item = (sender as ListView).SelectedItem;
+           
             if (item != null)
             {
+                accAccept = null;
                 curGroup = item as Group;
                 Uri uri = new Uri(curGroup.Image, UriKind.Absolute);
                 ImageSource imgSource = new BitmapImage(uri);

@@ -23,13 +23,16 @@ namespace MessageApp.Pages
     {
         public int groupCurId;
         public int accCurId;
+        public int accIdSend;
         public MessageApplicationContext db;
-        public chatGroupView(int groupCurId, int accCurId)
+        public chatGroupView(int groupCurId, int accCurId, int accIdSend =0)
         {
             InitializeComponent();
             this.groupCurId = groupCurId;
             this.accCurId = accCurId;
+            this.accIdSend = accIdSend;
             db = new MessageApplicationContext();
+            
         }
         private void creatConversiton(List<MessageGroup> messages)
         {
@@ -64,32 +67,65 @@ namespace MessageApp.Pages
                 }
                 else
                 {
-                    Account a = db.Accounts.FirstOrDefault(x => x.AccountId == m.AccountIdsend);
-                    TextBlock text = new TextBlock();
-                    text.Text = m.Content;
-                    text.Margin = new Thickness(20, 10, 10, 10);
-                    TextBlock nameSend = new TextBlock();
-                    nameSend.Text = a.FullName;
-                    nameSend.Margin = new Thickness(20, 5, 5, 3);
-                    nameSend.Foreground = Brushes.Red;
-                    TextBlock time = new TextBlock();
-                    time.Text = String.Format("{0:f}", m.Time);
-                    time.FontSize = 10;
-                    time.HorizontalAlignment = HorizontalAlignment.Left;
-                    time.Margin = new Thickness(20, 10, 10, 10);
-                    Border b = new Border();
-                    b.Width = 200;
-                    b.Height = 50;
-                    b.BorderBrush = Brushes.Green;
-                    b.Margin = new Thickness(10, 20, 20, 10);
-                    b.CornerRadius = new CornerRadius(15);
-                    b.BorderThickness = new Thickness(1);
-                    b.Background = Brushes.White;
-                    b.Child = text;
-                    b.HorizontalAlignment = HorizontalAlignment.Left;
-                    chatlist.Children.Add(nameSend);
-                    chatlist.Children.Add(b);
-                    chatlist.Children.Add(time);
+                    if (accIdSend != 0)
+                    {
+                        Account a = db.Accounts.FirstOrDefault(x => x.AccountId == accIdSend);
+                        TextBlock text = new TextBlock();
+                        text.Text = m.Content;
+                        text.Margin = new Thickness(20, 10, 10, 10);
+                        TextBlock nameSend = new TextBlock();
+                        nameSend.Text = a.FullName;
+                        nameSend.Margin = new Thickness(20, 5, 5, 3);
+                        nameSend.Foreground = Brushes.Red;
+                        TextBlock time = new TextBlock();
+                        time.Text = String.Format("{0:f}", m.Time);
+                        time.FontSize = 10;
+                        time.HorizontalAlignment = HorizontalAlignment.Left;
+                        time.Margin = new Thickness(20, 10, 10, 10);
+                        Border b = new Border();
+                        b.Width = 200;
+                        b.Height = 50;
+                        b.BorderBrush = Brushes.Green;
+                        b.Margin = new Thickness(10, 20, 20, 10);
+                        b.CornerRadius = new CornerRadius(15);
+                        b.BorderThickness = new Thickness(1);
+                        b.Background = Brushes.White;
+                        b.Child = text;
+                        b.HorizontalAlignment = HorizontalAlignment.Left;
+                        chatlist.Children.Add(nameSend);
+                        chatlist.Children.Add(b);
+                        chatlist.Children.Add(time);
+                    }
+                    else
+                    {
+                        Account a = db.Accounts.FirstOrDefault(x => x.AccountId == m.AccountIdsend);
+
+                        TextBlock text = new TextBlock();
+                        text.Text = m.Content;
+                        text.Margin = new Thickness(20, 10, 10, 10);
+                        TextBlock nameSend = new TextBlock();
+                        nameSend.Text = a.FullName;
+                        nameSend.Margin = new Thickness(20, 5, 5, 3);
+                        nameSend.Foreground = Brushes.Red;
+                        TextBlock time = new TextBlock();
+                        time.Text = String.Format("{0:f}", m.Time);
+                        time.FontSize = 10;
+                        time.HorizontalAlignment = HorizontalAlignment.Left;
+                        time.Margin = new Thickness(20, 10, 10, 10);
+                        Border b = new Border();
+                        b.Width = 200;
+                        b.Height = 50;
+                        b.BorderBrush = Brushes.Green;
+                        b.Margin = new Thickness(10, 20, 20, 10);
+                        b.CornerRadius = new CornerRadius(15);
+                        b.BorderThickness = new Thickness(1);
+                        b.Background = Brushes.White;
+                        b.Child = text;
+                        b.HorizontalAlignment = HorizontalAlignment.Left;
+                        chatlist.Children.Add(nameSend);
+                        chatlist.Children.Add(b);
+                        chatlist.Children.Add(time);
+                    }
                 }
 
             }

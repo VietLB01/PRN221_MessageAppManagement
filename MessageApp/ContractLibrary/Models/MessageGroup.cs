@@ -5,6 +5,8 @@ namespace ContractLibrary.Models;
 
 public partial class MessageGroup
 {
+    public int Id { get; set; }
+
     public int AccountIdsend { get; set; }
 
     public int GroupIdaccept { get; set; }

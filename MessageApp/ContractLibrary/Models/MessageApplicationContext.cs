@@ -93,13 +93,14 @@ public partial class MessageApplicationContext : DbContext
 
         modelBuilder.Entity<MessageGroup>(entity =>
         {
-            entity.HasKey(e => new { e.AccountIdsend, e.GroupIdaccept });
+            entity.HasKey(e => e.Id).HasName("PK_Message_Group_1");
 
             entity.ToTable("Message_Group");
 
+            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.AccountIdsend).HasColumnName("AccountIDSend");
-            entity.Property(e => e.GroupIdaccept).HasColumnName("GroupIDAccept");
             entity.Property(e => e.Content).HasColumnType("ntext");
+            entity.Property(e => e.GroupIdaccept).HasColumnName("GroupIDAccept");
             entity.Property(e => e.Time)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
