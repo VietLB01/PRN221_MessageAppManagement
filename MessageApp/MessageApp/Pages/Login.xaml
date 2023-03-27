@@ -26,7 +26,7 @@
                      Margin="0 15"
                      BorderBrush="#c5c8cc"
                      BorderThickness="0 0 0 1.5"
-
+                    x:Name="txtUserName"
                      />
             <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      materialDesign:HintAssist.Hint="Password"
@@ -34,7 +34,7 @@
                      BorderBrush="#c5c8cc"
                       Margin="0 15"
                      BorderThickness="0 0 0 1.5"
-
+                     x:Name="txtPassword"
                      />
           
             <StackPanel Orientation="Horizontal">
